@@ -30,9 +30,28 @@ def metodo_euler(t0, y0, h, pasos):
         tiempos.append(t)
         valores.append(y)
 
-        pass
-
     return tiempos, valores
 
 print(metodo_euler(0, 1, 0.2, 5))
+
+tiempos, valores = metodo_euler(0, 1, 0.2, 5)
+
+def comparar_soluciones(tiempos, valores):
+    exactos = []
+    errores = []
+
+    for t, y_euler in zip(tiempos, valores):
+        solucion_exacta_valor = solucion_exacta(t)
+
+        # Calcula el error absoluto
+        error =  abs(y_euler - solucion_exacta_valor)
+        # Guarda ambos resultados
+        exactos.append(solucion_exacta_valor)
+        errores.append(error)
+
+    return exactos, errores
+
+exactos, errores = comparar_soluciones(tiempos, valores)
+
+print(f"Exactos: {exactos}, Errores: {errores}")
 
