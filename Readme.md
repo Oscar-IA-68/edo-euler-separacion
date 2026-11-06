@@ -13,47 +13,47 @@ El objetivo es comparar los resultados de ambos métodos y analizar el error int
 
 Se considera la ecuación diferencial:
 
-$
+$$
 \frac{dy}{dt}=-2y
-$
+$$
 
 Con la condición inicial:
 
-$
+$$
 y(0)=1
-$
+$$
 
 Se busca resolverla en el intervalo:
 
-$
+$$
 t\in[0,1]
-$
+$$
 
 Utilizando un tamaño de paso de:
 
-$
+$$
 h=0.2
-$
+$$
 
 ## 2. Solución analítica
 
 Mediante separación de variables:
 
-$
+$$
 \frac{1}{y}dy=-2dt
-$
+$$
 
 Integramos ambos lados:
 
-$
+$$
 \ln|y|=-2t+C
-$
+$$
 
 Despejando y aplicando la condición inicial, obtenemos:
 
-$
+$$
 \boxed{y(t)=e^{-2t}}
-$
+$$
 
 Esta expresión representa un decaimiento exponencial.
 
@@ -63,21 +63,21 @@ El método de Euler utiliza la pendiente conocida en un punto para estimar el si
 
 Su expresión general es:
 
-$
+$$
 y_{n+1}=y_n+h f(t_n,y_n)
-$
+$$
 
 Para nuestro problema:
 
-$
+$$
 y_{n+1}=y_n+0.2(-2y_n)
-$
+$$
 
 Por tanto:
 
-$
+$$
 y_{n+1}=0.6y_n
-$
+$$
 
 Se realizan cinco pasos para aproximar la solución desde $t=0$ hasta $t=1$.
 
@@ -94,9 +94,9 @@ Se realizan cinco pasos para aproximar la solución desde $t=0$ hasta $t=1$.
 
 El error absoluto se calcula como:
 
-$
+$$
 E=|y_{\text{exacta}}-y_{\text{Euler}}|
-$
+$$
 
 ## 5. Implementación en Python
 
