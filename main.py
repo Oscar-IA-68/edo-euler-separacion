@@ -55,3 +55,19 @@ exactos, errores = comparar_soluciones(tiempos, valores)
 
 print(f"Exactos: {exactos}, Errores: {errores}")
 
+
+plt.figure(figsize=(8, 5))
+
+# Dibuja la solución exacta
+plt.plot(tiempos, exactos, label="solución exacta", color="blue", marker="o")
+# Dibuja los puntos aproximados de Euler
+plt.plot(tiempos, valores, label="aproximación de Euler", color="yellow", marker="o")
+# Agrega título y etiquetas a los ejes
+plt.title("Comparación de la solución exacta y la aproximación de Euler")
+plt.xlabel("tiempo (t)")
+plt.ylabel("valor de y")
+# Activa una leyenda y una cuadrícula
+plt.legend()
+plt.grid()
+plt.show()
+  
